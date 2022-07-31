@@ -1,0 +1,16 @@
+
+// inside db folder:
+psql -d chatbot < schema.sql
+psql -d chatbot < seed.sql
+
+//in root folder: 
+
+npm install express
+
+npm install pg 
+
+npm install dotenv express-session connect-pg-simple --save
+
+
+
+npm start // or npm run start:dev
