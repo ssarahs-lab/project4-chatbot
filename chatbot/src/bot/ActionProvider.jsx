@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-
-
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleHello = () => {
     const botMessage = createChatBotMessage('Hello. Nice to meet you.');
@@ -21,7 +18,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, botMessage],
     }));
   };
-
 
   
 
