@@ -1,9 +1,10 @@
 import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
-import config from './bot/config.jsx';
-import MessageParser from './bot/MessageParser.jsx';
-import ActionProvider from './bot/ActionProvider.jsx';
+import config from './components/config.jsx';
+import MessageParser from './components/MessageParser.jsx';
+import ActionProvider from './components/ActionProvider.jsx';
 import './App.css';
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
       <header>
         <ul>
           <li><a href="/home">Home</a></li>
-          <li><a href="/chatpage">Chat with Saura</a></li>
-          <li> <a href="/animalgenerate">Generate an Animal - test example</a></li>
+          <li><a href="/chatpage">Chat with Chatbot test</a></li>
+          
         </ul>
       </header>
      
@@ -22,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home/>}/>
         <Route path="/chatpage" element={<Chatpage/>}/>
-        <Route path="/animalgenerate" element={<Generate/>}/>
+       
       </Routes>
     </BrowserRouter>
   
@@ -30,6 +31,7 @@ function App() {
      
   );
 }
+
 
 function Home() {
   return ( <div>
@@ -44,13 +46,18 @@ function Chatpage() {
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
+      
       />
     </div>
   );
 }
 
 function Generate() {
-  return ( <div></div> );
+  return ( <div>
+
+
+
+  </div> );
 }
 
 

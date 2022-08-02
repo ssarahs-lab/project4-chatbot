@@ -3,11 +3,11 @@ import React from 'react';
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    if (message) {
+    if (message.includes('hello')) {
       actions.handleHello();
     }
-    if (message.includes('hey')) {
-      actions.sampleHi();
+    else{
+      actions.callOpenAI(message);
     }
 
   };
