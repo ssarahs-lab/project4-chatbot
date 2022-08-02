@@ -5,7 +5,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: "nice try faceless github user",
 });
 
 const openai = new OpenAIApi(configuration);
@@ -28,7 +28,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
   const callOpenAI = (message) => {
 
    
-
+console.log("yes")
       openai.createCompletion({
         model: "text-davinci-002",
         prompt: `The following is a conversation with a psychologist. 
