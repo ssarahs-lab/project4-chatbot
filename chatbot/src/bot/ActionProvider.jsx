@@ -5,13 +5,13 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
 
 
-let messageHistory = ''
+let messageHistory = []
 
 const ActionProvider = ({ createChatBotMessage, setState, children}) => {
   const handleHello = () => {
@@ -24,20 +24,22 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
   };
 
   
+
   
   const callOpenAI = (message) => {
+    console.log(message)
 
-    messageHistory = messageHistory + `\n You: ${message} `
+    messageHistory = [...messageHistory, message]
     
     console.log(messageHistory)
     console.log("this works")
  
       openai.createCompletion({
         model: "text-davinci-002",
-        prompt: `The following is a conversation with a friend. 
+        prompt: `The following is a conversation with a psychologist. 
 
-        The friend is empathetic, kind, clever, and humorous.
-        Bot: Hi! I\'m a chatbot created to help people talk about their problems. What would you like to talk about today?
+        The assistant is empathetic, kind, clever, and humorous.
+        Bot: Hi! I\'m a chatbot created to help people talk about their problems. What would you like to talk about today? 
         You: ${messageHistory}
         Bot: ` ,
         temperature: 0.9,
@@ -56,10 +58,11 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
         setState((prev) => ({
           ...prev,
           messages: [...prev.messages, botMessage],
+
         }));
-        messageHistory = messageHistory + ` \n Bot: ${botMessage.message}`
-    
-        console.log(messageHistory)
+
+        messageHistory = [...messageHistory, botMessage]
+        
       })
 
       
