@@ -11,6 +11,10 @@
     "react-chatbot-kit": "^2.1.0",
     "readline-sync": "^1.4.10"
   },
-  "type": "module"
+  
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && yarn && yarn build"
+  },
  
 }
