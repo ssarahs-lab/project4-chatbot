@@ -8,6 +8,10 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  
+
+  
   return (
   <div className="App">
   
@@ -41,14 +45,30 @@ function Home() {
 }
 
 function Chatpage() {
+  const [showBot, toggleBot] = useState(false);
+
+  const saveMessages = (messages, HTMLString) => {
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
+  };
+
+  const loadMessages = () => {
+    const messages = JSON.parse(localStorage.getItem('chat_messages'));
+    return messages;
+  };
   return (  <div>
-    <Chatbot
-        config={config}
-        messageParser={MessageParser}
-        actionProvider={ActionProvider}
-      
-      />
-    </div>
+    {showBot && (
+        <Chatbot
+          config={config}
+          actionProvider={ActionProvider}
+          messageHistory={loadMessages()}
+          messageParser={MessageParser}
+          saveMessages={saveMessages}
+          runInitialMessagesWithHistory
+        />
+      )}
+      <button onClick={() => toggleBot((prev) => !prev)}>Bot</button>
+
+      </div>
   );
 }
 

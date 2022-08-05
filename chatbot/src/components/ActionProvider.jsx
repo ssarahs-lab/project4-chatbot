@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import MessageParser from './MessageParser';
 const { Configuration, OpenAIApi } = require("openai");
@@ -5,7 +6,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
@@ -23,7 +24,18 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
     }));
   };
 
-  
+  const callBackendAI = (message) => {
+
+    const data = message
+
+  axios.post('/api', data).then((response) => {
+      console.log(response.data)
+     
+  }).catch((error) => {
+      console.error(error)
+  })
+   
+  }
   
   const callOpenAI = (message) => {
 
@@ -74,7 +86,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleHello, callOpenAI
+            handleHello, callOpenAI, callBackendAI
           },
         });
       })}

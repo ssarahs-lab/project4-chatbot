@@ -7,7 +7,7 @@ const MessageParser = ({ children, actions }) => {
       actions.handleHello();
     }
     else{
-      actions.callOpenAI(message);
+      actions.callBackendAI(message);
     }
 
   };
