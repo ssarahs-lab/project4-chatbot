@@ -1,37 +1,66 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/ssarahs-lab/project4/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+Live site link: 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## Technologies used
+Javascript, AJAX, NodeJS, ExpressJS, PostgreSQL client, PostgresQL
 
-- Bulleted
-- List
+## Approach taken
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+## Installation instructions
 
-[Link](url) and ![Image](src)
+In PostgresQL: 
+
+    CREATE DATABASE chatbot;
+
+  
+
+In the terminal:
+
+  
+
+ - Inside the DB folder: 
+   
+         psql -d chatbot < schema.sql
+         psql -d chatbot < seed.sql
+   
+   In the root folder:
+   
+       npm install express
+       npm install nodemon
+       npm install pg 
+       npm install express-session
+       npm install axios
+       npm install openai
+       npm start // or npm run start:dev
+
+## Installation instructions (if database has changed)
+Locally: 
+
+
+    psql -d chatbot < schema.sql
+    psql -d chatbot < seed.sql
+
+	
+Then restart local server:
+
+    npm start
+
+On Heroku: 
+
+Reset database (deletes ALL data):
+
+```
+heroku pg:reset
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Copy local database to the Heroku database:
+```
+heroku pg:push chatbot DATABASE_URL
+```
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ssarahs-lab/project4/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Unsolved problems
