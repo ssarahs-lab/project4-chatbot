@@ -48,5 +48,9 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "gh-pages": "^4.0.0"
+  }, 
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && yarn && yarn build"
   }
 }
