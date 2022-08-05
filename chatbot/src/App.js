@@ -1,3 +1,4 @@
+import React from 'react';
 import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
 import config from './components/config.jsx';
@@ -5,14 +6,15 @@ import MessageParser from './components/MessageParser.jsx';
 import ActionProvider from './components/ActionProvider.jsx';
 import './App.css';
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import style from './style.css';
 
 function App() {
 
   function Home() {
-    return ( <div>
-      <h1>Home</h1>
-      <p>Welcome!</p>
+    return ( <div id={style.navi}>
+      <img src={require('./images/landing.gif')}/>
+ 
     </div>);
   }
   
@@ -50,19 +52,33 @@ function App() {
   return (
   <div className="App">
   
-      <header>
+ 
+     
+    <BrowserRouter>
+    <header>
         <ul>
           <li><a href="/home">Home</a></li>
-          <li><a href="/chatpage">Chat with Chatbot test</a></li>
+          <li><a href="/chatpage">Chat with Zaura</a></li>
+          <li><a href="/chatpage">Contact Sarah</a></li>
           
         </ul>
       </header>
-     
-    <BrowserRouter>
+
+   
       <Routes>
         <Route path="/home" element={<Home/>}/>
+        <Route path="/" element={<Navigate to="/home" />} />
+
         <Route path="/chatpage" element={<Chatpage/>}/>
-       
+        <Route
+            path="*"
+            element={
+              <div>
+                <h2>404 Page not found</h2>
+                <img src={require('./images/404.gif')}></img>
+              </div>
+            }
+          />
       </Routes>
     </BrowserRouter>
   

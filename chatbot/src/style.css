@@ -1,0 +1,15 @@
+navi {
+	margin:0;
+	padding:0;
+}
+.navi li {
+	display:inline;
+	padding:0;
+	margin:0;
+}
+
+.navi a:link,
+.navi a:visited {
+	color:#000;
+	background:#b2b580;
+}

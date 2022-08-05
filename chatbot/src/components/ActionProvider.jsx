@@ -24,16 +24,35 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
     }));
   };
 
-  const callBackendAI = (message) => {
+  const callSauraAI = (message) => {
 
-    const data = message
+    messageHistory = messageHistory + `\n You: ${message} `
+    console.log(messageHistory)
 
-  axios.post('/api', data).then((response) => {
-      console.log(response.data)
-     
-  }).catch((error) => {
-      console.error(error)
-  })
+    axios.post('/api-saura',{
+      data: messageHistory,
+      
+    })
+    
+    .then((response) => {
+      
+      let botMessage = createChatBotMessage(`${response.data}`)
+
+      setState((prev) => ({
+        ...prev,
+        messages: [...prev.messages, botMessage],
+    }));
+      
+      messageHistory = messageHistory + ` \n Bot: ${botMessage.message}`
+
+      console.log(messageHistory)
+
+    
+      
+    }).catch((error) => {
+        console.error(error)
+    
+    })
    
   }
   
@@ -49,7 +68,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
         prompt: `The following is a conversation with a friend. 
 
         The friend is empathetic, kind, clever, and humorous.
-        Bot: Hi! I\'m a chatbot created to help people talk about their problems. What would you like to talk about today?
+        Bot: Hi! I'm a chatbot created to help people talk about their problems. What would you like to talk about today?
         You: ${messageHistory}
         Bot: ` ,
         temperature: 0.9,
@@ -86,7 +105,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleHello, callOpenAI, callBackendAI
+            handleHello, callOpenAI, callBackendAI: callSauraAI
           },
         });
       })}
