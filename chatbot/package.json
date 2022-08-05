@@ -51,6 +51,6 @@
   }, 
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd client && yarn && yarn build"
+    "heroku-postbuild": "cd chatbot && yarn && yarn build"
   }
 }
