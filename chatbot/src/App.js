@@ -13,7 +13,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function Home() {
   return ( <div id={style.navi} className="animate__animated animate__fadeIn">
-    <img src={require('./images/landing.gif')}/>
+    <img src={require('./images/landing.gif')} className="landingImage"/>
 
   </div>);
 }
@@ -30,7 +30,7 @@ function Chatpage() {
     return messages;
   };
   return (  
-  <div className='container1 animate__animated animate__fadeIn'>
+  <div className='container1 animate__animated animate__fadeIn vw-80'>
       <div className='col-1'> 
         <img src={require('./images/snow_final.gif')} className="catImage"/>
       </div>
@@ -58,6 +58,7 @@ export function Aboutpage(){
 
     <p>To contact Sarah, you can find her via her <a href="https://www.linkedin.com/in/sarah-so-dev/">LinkedIn</a> or <a href="https://github.com/ssarahs-lab">Github Page</a>.</p>
    
+              
   </div>)
 }
 function App() {

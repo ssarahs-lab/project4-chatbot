@@ -11,13 +11,22 @@ ul {
   grid-template-columns: 1fr 1fr;
 }
 .container1{
-  display: grid;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 30px; */
 }
 
+.landingImage{
+  height: 50vh;
+}
 
-
+.vw-80{
+  width: 80vw;
+}
 
 .ul-display{ 
   display: flex;
@@ -30,6 +39,7 @@ ul {
 }
 .col-1{
 grid-column-start: 1;
+margin-right: 20px;
 }
 
 .catImage{
