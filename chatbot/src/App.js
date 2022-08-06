@@ -12,7 +12,7 @@ import { render } from '@testing-library/react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function Home() {
-  return ( <div id={style.navi}>
+  return ( <div id={style.navi} className="animate__animated animate__fadeIn">
     <img src={require('./images/landing.gif')}/>
 
   </div>);
@@ -30,7 +30,7 @@ function Chatpage() {
     return messages;
   };
   return (  
-  <div className='container1'>
+  <div className='container1 animate__animated animate__fadeIn'>
       <div className='col-1'> 
         <img src={require('./images/snow_final.gif')} className="catImage"/>
       </div>
@@ -50,7 +50,7 @@ function Chatpage() {
 }
 
 export function Aboutpage(){
-  return(<div>
+  return(<div className='animate__animated animate__fadeIn'>
     <h2 data-testid="heading">About this page</h2>
     <img src={require('./images/phone.gif')}/>
     <p>Es is an AI chatbot powered by OpenAI's GPT3.</p>
@@ -80,8 +80,9 @@ function App() {
         </ul>
       </header>
 
-   
-      <Routes>
+ 
+
+    <Routes>
         <Route path="/home" element={<Home/>}/>
         <Route path="/" element={<Navigate to="/home" />} />
 
@@ -96,7 +97,7 @@ function App() {
               </div>
             }
           />
-      </Routes>
+      </Routes>  
     </BrowserRouter>
   
   </div>
