@@ -24,7 +24,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
     }));
   };
 
-  const callSauraAI = (message) => {
+  const callEsAI = (message) => {
 
     messageHistory = messageHistory + `\n You: ${message} `
     console.log(messageHistory)
@@ -105,7 +105,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children}) => {
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleHello, callOpenAI, callBackendAI: callSauraAI
+            handleHello, callOpenAI, callBackendAI: callEsAI
           },
         });
       })}

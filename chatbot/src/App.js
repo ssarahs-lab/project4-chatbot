@@ -8,6 +8,8 @@ import './App.css';
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import style from './style.css';
+import { render } from '@testing-library/react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function App() {
 
@@ -29,28 +31,41 @@ function App() {
       const messages = JSON.parse(localStorage.getItem('chat_messages'));
       return messages;
     };
-    return (  <div>
-      {showBot && (
-          <Chatbot
-            config={config}
-            actionProvider={ActionProvider}
-            messageHistory={loadMessages()}
-            messageParser={MessageParser}
-            saveMessages={saveMessages}
-            runInitialMessagesWithHistory
-          />
-        )}
-        <button onClick={() => toggleBot((prev) => !prev)}>Bot</button>
-  
+    return (  
+    <div className='container1'>
+        <div className='col-1'> 
+          <img src={require('./images/snow_final.gif')} className="catImage"/>
         </div>
+        <div className='col-2'>
+            <Chatbot
+              config={config}
+              actionProvider={ActionProvider}
+              messageHistory={loadMessages()}
+              messageParser={MessageParser}
+              saveMessages={saveMessages}
+              runInitialMessagesWithHistory
+              headerText='Conversation with Es'
+            />
+          </div>
+      </div>
     );
   }
   
-  
+  function Aboutpage(){
+    return(<div>
+      <h2>About this page</h2>
+      <img src={require('./images/phone.gif')}/>
+      <p>Es is an AI chatbot powered by OpenAI's GPT3.</p>
+      <p>This page was made by Sarah So for her portfolio as part of General Assembly's Software Immersive Course.</p>
+
+      <p>To contact Sarah, you can find her via her <a href="https://www.linkedin.com/in/sarah-so-dev/">LinkedIn</a> or <a href="https://github.com/ssarahs-lab">Github Page</a>.</p>
+     
+    </div>)
+  }
   
   
   return (
-  <div className="App">
+  <div className="App container">
   
  
      
@@ -58,8 +73,8 @@ function App() {
     <header>
         <ul>
           <li><a href="/home">Home</a></li>
-          <li><a href="/chatpage">Chat with Zaura</a></li>
-          <li><a href="/chatpage">Contact Sarah</a></li>
+          <li><a href="/chatpage">Chat with Es</a></li>
+          <li><a href="/aboutpage">About</a></li>
           
         </ul>
       </header>
@@ -70,6 +85,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
 
         <Route path="/chatpage" element={<Chatpage/>}/>
+        <Route path="/aboutpage" element={<Aboutpage/>}/>
         <Route
             path="*"
             element={

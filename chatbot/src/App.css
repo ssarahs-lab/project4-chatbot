@@ -1,8 +1,36 @@
 .App {
   text-align: center;
-  font-family: 'Roboto Mono', monospace;
+
 }
 
+ul {
+  list-style: none;
+}
+
+.container{
+  grid-template-columns: 1fr 1fr;
+}
+.container1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.col-1{
+grid-column-start: 1;
+}
+
+.catImage{
+  width: 17.5vw;
+  border-radius: 2px;
+}
+
+.col-2 {
+
+  grid-column-start: 2;
+  grid-column-end: span col3-start;
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,6 +41,16 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
 
 .App-header {
   background-color: #282c34;
@@ -46,6 +84,8 @@
 }
 
 .react-chatbot-kit-chat-container {
+
+  
   
 }
 
@@ -64,6 +104,7 @@
 }
 
 .react-chatbot-kit-chat-input {
+ 
   
 }
 
@@ -80,6 +121,8 @@
 }
 
 .react-chatbot-kit-chat-bot-message-container {
+  
+  
 }
 
 .react-chatbot-kit-chat-bot-avatar-container {
@@ -93,10 +136,12 @@
 }
 
 .react-chatbot-kit-chat-bot-message {
-  
+
+
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {
+  
 }
 
 .react-chatbot-kit-chat-bot-loading-icon-container {
