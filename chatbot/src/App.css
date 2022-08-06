@@ -21,7 +21,8 @@ ul {
 }
 
 .landingImage{
-  height: 50vh;
+
+  width: 80vw;
 }
 
 .vw-80{
@@ -102,6 +103,8 @@ a:active { text-decoration: none; }
   display: grid;
   place-items: center;
   margin-top: 20vh;
+
+  --animation-duration: 20s ;
   
 }
 

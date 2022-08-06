@@ -12,8 +12,12 @@ import { render } from '@testing-library/react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function Home() {
+
+  const randomImage =() => {
+
+  }
   return ( <div id={style.navi} className="animate__animated animate__fadeIn">
-    <img src={require('./images/landing.gif')} className="landingImage"/>
+    <img src={require('./images/nightday.gif')} className="landingImage"/>
 
   </div>);
 }
