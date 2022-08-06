@@ -11,57 +11,58 @@ import style from './style.css';
 import { render } from '@testing-library/react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
+function Home() {
+  return ( <div id={style.navi}>
+    <img src={require('./images/landing.gif')}/>
+
+  </div>);
+}
+
+function Chatpage() {
+  const [showBot, toggleBot] = useState(false);
+
+  const saveMessages = (messages, HTMLString) => {
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
+  };
+
+  const loadMessages = () => {
+    const messages = JSON.parse(localStorage.getItem('chat_messages'));
+    return messages;
+  };
+  return (  
+  <div className='container1'>
+      <div className='col-1'> 
+        <img src={require('./images/snow_final.gif')} className="catImage"/>
+      </div>
+      <div className='col-2'>
+          <Chatbot
+            config={config}
+            actionProvider={ActionProvider}
+            messageHistory={loadMessages()}
+            messageParser={MessageParser}
+            saveMessages={saveMessages}
+            runInitialMessagesWithHistory
+            headerText='Conversation with Es'
+          />
+        </div>
+    </div>
+  );
+}
+
+export function Aboutpage(){
+  return(<div>
+    <h2 data-testid="heading">About this page</h2>
+    <img src={require('./images/phone.gif')}/>
+    <p>Es is an AI chatbot powered by OpenAI's GPT3.</p>
+    <p>This page was made by Sarah So for her portfolio as part of General Assembly's Software Immersive Course.</p>
+
+    <p>To contact Sarah, you can find her via her <a href="https://www.linkedin.com/in/sarah-so-dev/">LinkedIn</a> or <a href="https://github.com/ssarahs-lab">Github Page</a>.</p>
+   
+  </div>)
+}
 function App() {
 
-  function Home() {
-    return ( <div id={style.navi}>
-      <img src={require('./images/landing.gif')}/>
- 
-    </div>);
-  }
   
-  function Chatpage() {
-    const [showBot, toggleBot] = useState(false);
-  
-    const saveMessages = (messages, HTMLString) => {
-      localStorage.setItem('chat_messages', JSON.stringify(messages));
-    };
-  
-    const loadMessages = () => {
-      const messages = JSON.parse(localStorage.getItem('chat_messages'));
-      return messages;
-    };
-    return (  
-    <div className='container1'>
-        <div className='col-1'> 
-          <img src={require('./images/snow_final.gif')} className="catImage"/>
-        </div>
-        <div className='col-2'>
-            <Chatbot
-              config={config}
-              actionProvider={ActionProvider}
-              messageHistory={loadMessages()}
-              messageParser={MessageParser}
-              saveMessages={saveMessages}
-              runInitialMessagesWithHistory
-              headerText='Conversation with Es'
-            />
-          </div>
-      </div>
-    );
-  }
-  
-  function Aboutpage(){
-    return(<div>
-      <h2>About this page</h2>
-      <img src={require('./images/phone.gif')}/>
-      <p>Es is an AI chatbot powered by OpenAI's GPT3.</p>
-      <p>This page was made by Sarah So for her portfolio as part of General Assembly's Software Immersive Course.</p>
-
-      <p>To contact Sarah, you can find her via her <a href="https://www.linkedin.com/in/sarah-so-dev/">LinkedIn</a> or <a href="https://github.com/ssarahs-lab">Github Page</a>.</p>
-     
-    </div>)
-  }
   
   
   return (
