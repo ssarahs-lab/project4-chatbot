@@ -30,5 +30,6 @@ For this project, I used React for Front-end and ExpressJS/NodeJS for the backen
 ## Potential Extensions for later
 
 - Using Phaser.io to make a game with the Chatbot
+- Adding in a Tamagotchi/pet and making it seem relevant to this app
 - Users can make their own bot with customised personalities. 
 - Local storage of chatbot history to train GPT-3
