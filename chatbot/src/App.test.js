@@ -19,8 +19,3 @@ test('aboutPage Route displays with created by content', () => {
     expect(heading).toBeInTheDocument();
   });
   
-  test('Chatpage appears', () => {
-    render (<Chatbot />);
-    const text = screen.getByTestID('bot');
-    expect(text).toBeInTheDocument();
-  })

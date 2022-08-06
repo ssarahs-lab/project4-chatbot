@@ -35,7 +35,7 @@ function Chatpage() {
         <img src={require('./images/snow_final.gif')} className="catImage"/>
       </div>
       <div className='col-2'>
-          <Chatbot
+          <Chatbot data-testid='text'
             config={config}
             actionProvider={ActionProvider}
             messageHistory={loadMessages()}
@@ -72,7 +72,7 @@ function App() {
      
     <BrowserRouter>
     <header>
-        <ul>
+        <ul className='ul-display'>
           <li><a href="/home">Home</a></li>
           <li><a href="/chatpage">Chat with Es</a></li>
           <li><a href="/aboutpage">About</a></li>
