@@ -22,21 +22,26 @@ ul {
 
 .landingImage{
 
-  width: 80vw;
+  width: 60vw;
 }
 
 .vw-80{
-  width: 80vw;
+  width: 60vw;
 }
 
 .ul-display{ 
   display: flex;
  justify-content: center;
-  gap: 10px;
+  gap: 50px;
   border-bottom: 2px solid black;
  padding-bottom: 15px;
- padding-left: -5px;
+ padding-left: 0;
+ padding-right: 0;
   
+}
+
+.aboutImage{
+  width: 60vw;
 }
 .col-1{
 grid-column-start: 1;
@@ -102,7 +107,7 @@ a:active { text-decoration: none; }
 :root{
   display: grid;
   place-items: center;
-  margin-top: 20vh;
+  margin-top: 10vh;
 
   --animation-duration: 20s ;
   

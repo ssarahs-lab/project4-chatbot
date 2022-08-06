@@ -56,7 +56,7 @@ function Chatpage() {
 export function Aboutpage(){
   return(<div className='animate__animated animate__fadeIn'>
     <h2 data-testid="heading">About this page</h2>
-    <img src={require('./images/phone.gif')}/>
+    <img src={require('./images/phone.gif')} className="aboutImage"/>
     <p>Es is an AI chatbot powered by OpenAI's GPT3.</p>
     <p>This page was made by Sarah So for her portfolio as part of General Assembly's Software Immersive Course.</p>
 
