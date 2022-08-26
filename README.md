@@ -5,17 +5,17 @@
 
 Live site link: [chatto-roboto](https://chatto-robotto.herokuapp.com/)
 ## Overview
-*Chatto Roboto* is a single page web app whereby the user can access a chatbot powered by natural language machine learning. 
+*Chatto Roboto* is a single page web app whereby the user can access a chatbot powered by machine learning with natural language processing.
 
 ## Technologies used
+ReactJS, Axios, NodeJS, ExpressJS, React-Chatbot-Kit, OpenAI's GPT-3
+
+## Approach taken
+
 In this project, I used **ReactJS** to create the page and **React-Chatbot-Kit** to create the chatbot interface on the frontend. 
 Then I used **Axios** to make an API call to the backend server. 
 **NodeJS** and **ExpressJS** was then setup for the backend server which then makes an API call to **OpenAI's GPT-3**.
 
-
-## Approach taken
-
-For this project, I used React for Front-end and ExpressJS/NodeJS for the backend to make API calls. 
 
 ## Installation instructions
 
