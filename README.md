@@ -28,6 +28,14 @@ Then I used **Axios** to make an API call to the backend server.
        npm install axios
        npm install openai
        npm start // or npm run start:dev
+       
+   In the chatbot folder:
+
+       npm install
+       yarn start
+
+ 
+
  
 
 
