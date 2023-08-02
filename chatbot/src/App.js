@@ -17,7 +17,7 @@ function Home() {
 
   }
   return ( <div id={style.navi} className="animate__animated animate__fadeIn">
-    <img src={require('./images/nightday.gif')} className="landingImage"/>
+    <img src={require('./images/yey.gif')} className="landingImage"/>
 
   </div>);
 }
@@ -36,7 +36,7 @@ function Chatpage() {
   return (  
   <div className='container1 animate__animated animate__fadeIn vw-80'>
       <div className='col-1'> 
-        <img src={require('./images/snow_final.gif')} className="catImage"/>
+        <img src={require('./images/yey2.gif')} className="catImage"/>
       </div>
       <div className='col-2'>
           <Chatbot data-testid='text'
@@ -46,7 +46,7 @@ function Chatpage() {
             messageParser={MessageParser}
             saveMessages={saveMessages}
             runInitialMessagesWithHistory
-            headerText='Conversation with Es'
+            headerText='Conversation with Saura'
           />
         </div>
     </div>
@@ -79,7 +79,7 @@ function App() {
     <header>
         <ul className='ul-display'>
           <li><a href="/home">Home</a></li>
-          <li><a href="/chatpage">Chat with Es</a></li>
+          <li><a href="/chatpage">Chat with Saura</a></li>
           <li><a href="/aboutpage">About</a></li>
           
         </ul>

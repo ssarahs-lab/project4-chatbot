@@ -1,7 +1,7 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 
 const config = {
-  initialMessages: [createChatBotMessage(`Hi ✋ I'm Es, a chatbot created to help people talk about their problems. What would you like to talk about today?`)],
+  initialMessages: [createChatBotMessage(`Hi ✋ I'm Saura, a chatbot that answers questions with questions. Say something - VIBEZ YO.`)],
 };
 
 export default config;
