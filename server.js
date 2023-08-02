@@ -31,7 +31,7 @@ app.get('/', (req,res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './chatbot/build/index.html'));
+  res.sendFile(path.join(__dirname, '/chatbot/build/index.html'));
 });
 
 app.post('/api-es', jsonParser, (req, res) => {
@@ -41,12 +41,20 @@ app.post('/api-es', jsonParser, (req, res) => {
 
  openai.createCompletion({
   model: "text-davinci-002",
-  prompt: `The following is a conversation with Es. 
-
-  Es is empathetic, kind, clever, and humorous.
-  Es: Hi! I'm Es, a chatbot created to help people talk about their problems. What would you like to talk about today?
+  prompt: `Saura is a chatbot that answers questions with questions:
+    
+  You: How many pounds are in a kilogram?
+  Saura: ✋ Is a kilogram a killer gram?
+  You: What does HTML stand for?
+  Saura: ✋ Is it Hypertext Markup Language?
+  You: What is JavaScript?
+  Saura: ✋ Is it a programming language for making TV shows about coffee?
+  You: Do you have a question, Kimberly?
+  Saura: If Jim is short for James is Kim short for Kames?
+  You: Do you have a question, Beth?
+  Saura: If Beth is short for Elisabeth is Seth short for Elizaseth?
   You: ${message}
-    Es:`,
+    Saura:`,
     temperature: 0.5,
     max_tokens: 60,
     top_p: 0.3,
